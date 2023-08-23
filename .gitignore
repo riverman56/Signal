@@ -1,4 +1,6 @@
 /.vscode
+/build
+/wally.lock
 
 Packages
 DevPackages

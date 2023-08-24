@@ -52,7 +52,7 @@ jobs:
 
       - name: Lint
         run: |
-          selene src/
+          selene src/ test/
 
   style:
     name: Styling

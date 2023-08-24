@@ -20,6 +20,10 @@ jobs:
       - name: Install Aftman
         uses: ok-nick/setup-aftman@v0
 
+      - name: Install Wally packages
+        shell: bash
+        run: wally install
+
       - name: Generate sourcemap.json
         shell: bash
         run: rojo sourcemap -o sourcemap.json

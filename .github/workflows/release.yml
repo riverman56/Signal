@@ -8,6 +8,8 @@ on:
 jobs:
     release:
         runs-on: ubuntu-latest
+        permissions:
+          contents: write
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
@@ -30,16 +32,5 @@ jobs:
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                name: Release ${{ github.ref }}
-                tag: ${{ github.ref }}
+                artifacts: /Signal.rbxm
                 draft: true
-
-            - name: Upload build artifact
-              uses: actions/upload-release-asset@v1
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                upload_url: ${{ steps.create_release.outputs.upload_url }}
-                asset_path: ./Signal.rbxm
-                asset_name: Signal.rbxm
-                asset_content_type: application/octet-stream

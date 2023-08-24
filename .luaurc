@@ -1,3 +1,8 @@
 {
-    "languageMode": "nonstrict"
+    "languageMode": "nonstrict",
+    "globals": [
+        "describe",
+        "expect",
+        "it"
+    ]
 }

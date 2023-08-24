@@ -32,5 +32,5 @@ jobs:
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                artifacts: Signal.rbxm
+                artifacts: ./Signal.rbxm
                 draft: true

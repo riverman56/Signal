@@ -1,3 +1,5 @@
 - bump version in wally.toml
+- add git versiontag to latest commit (ex. git tag v0.1.1 -m "Release v0.1.1")
+- push w/ tags (ex. git push origin v0.1.1)
 - update unit tests if warranted
 - run unit tests

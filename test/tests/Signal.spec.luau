@@ -56,6 +56,13 @@ return function()
 
 			expect(callCountA).to.equal(1)
 			expect(callCountB).to.equal(2)
+
+			disconnectB()
+
+			signal:fire()
+
+			expect(callCountA).to.equal(1)
+			expect(callCountB).to.equal(2)
 		end)
 
 		it("should not fire a subscription callback that has been disconnected mid-fire", function()

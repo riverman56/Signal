@@ -29,8 +29,12 @@ jobs:
             - name: Create GitHub Release
               id: create_release
               uses: ncipollo/release-action@v1
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                 artifacts: ./Signal.rbxm
                 draft: true
+
+            - name: Deploy docs
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - run: npx moonwave build --publish

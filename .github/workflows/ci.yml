@@ -33,7 +33,7 @@ jobs:
         run: rojo sourcemap -o test-sourcemap.json test.project.json
 
       - name: Download global Roblox types
-        shell: bashx
+        shell: bash
         run: curl -O https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.lua
 
       - name: Analyze

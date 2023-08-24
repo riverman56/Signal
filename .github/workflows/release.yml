@@ -33,6 +33,12 @@ jobs:
                 artifacts: ./Signal.rbxm
                 draft: true
 
+            - name: Set git author information
+              run: | 
+                git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                git config user.name "github-actions[bot]"
+                |
+
             - name: Deploy docs
               uses: actions/setup-node@v3
               with:

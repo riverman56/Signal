@@ -1,1 +1,4 @@
 title = "Signal"
+
+[docusaurus]
+favicon = "/favicon.png"

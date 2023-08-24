@@ -1,4 +1,5 @@
 type Callback = (...any) -> ()
+type Disconnector = () -> ()
 
 type Connections = { [Callback]: {
 	isDisconnected: boolean,
@@ -10,7 +11,7 @@ export type Signal = {
 	_connections: Connections,
 
 	fire: (...any) -> (),
-	subscribe: (Callback) -> () -> (),
+	subscribe: (Callback) -> Disconnector,
 }
 
 export type SignalInterface = {

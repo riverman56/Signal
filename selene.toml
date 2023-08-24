@@ -1,1 +1,2 @@
-std="roblox+testez"
+std = "roblox+testez"
+exclude = ["**/*.d.luau"]

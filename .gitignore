@@ -1,8 +1,8 @@
 /.vscode
 /build
-/wally.lock
 
 Packages
 DevPackages
 
 sourcemap.json
+wally.lock

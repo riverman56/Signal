@@ -44,3 +44,5 @@ jobs:
                 git config --global user.email "support+actions@github.com"
                 git config --global user.name "github-actions-bot"
                 npx moonwave build --publish --code src
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

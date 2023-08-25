@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[843],{63891:s=>{s.exports=JSON.parse('{"sourceUrl":"https://github.com/riverman56/signal/blob/master","baseUrl":"/signal/","classOrder":[],"apiCategories":[]}')}}]);

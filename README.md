@@ -7,11 +7,11 @@ This library was inspired by the [signal implementation found in Roact.](https:/
 local Signal = require(path.to.Signal)
 
 local signal = Signal.new()
-signal:subscribe(function()
-    print("Hello World!")
+signal:subscribe(function(message: string)
+    print(message)
 end)
 
-signal:fire()
+signal:fire("Hello World!")
 -- output: Hello World!
 ```
 See the [Signal API](https://riverman56.github.io/signal/api/Signal) for more info

@@ -42,7 +42,7 @@ jobs:
 
       - name: Analyze Tests
         shell: bash
-        run: luau-lsp analyze --definitions=globalTypes.d.lua --base-luaurc=.luaurc --sourcemap=test-sourcemap.json test/
+        run: luau-lsp analyze --definitions=globalTypes.d.lua --definitions=testez.d.luau --base-luaurc=.luaurc --sourcemap=test-sourcemap.json test/
 
   lint:
     name: Lint

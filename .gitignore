@@ -2,6 +2,8 @@
 /build
 /wally.lock
 
+**/.DS_Store
+
 Packages
 DevPackages
 

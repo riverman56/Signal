@@ -23,8 +23,9 @@ jobs:
             - name: Publish to Wally
               run: wally publish
 
+              # we use a different project file with the name capitalized for consistency
             - name: Build project
-              run: rojo build --output Signal.rbxm
+              run: rojo build release.project.json --output Signal.rbxm
 
             - name: Create GitHub Release
               id: create_release

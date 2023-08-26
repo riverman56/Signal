@@ -1,6 +1,10 @@
 [package]
 name = "riverman56/signal"
-version = "0.1.1"
+description = "Bare-bones signal implementation"
+version = "0.1.2"
+license = "MIT"
+authors = ["River Constantino <sawfly-bonsais.0v@icloud.com>"]
+
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 

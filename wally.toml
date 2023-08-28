@@ -1,7 +1,7 @@
 [package]
 name = "riverman56/signal"
 description = "Bare-bones signal implementation"
-version = "0.1.2"
+version = "0.2.0"
 license = "MIT"
 authors = ["River Constantino <sawfly-bonsais.0v@icloud.com>"]
 

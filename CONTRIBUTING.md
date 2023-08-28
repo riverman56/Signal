@@ -1,5 +1,5 @@
 # Release Checklist
-1. Update & run relevant unit tests ([TestEZ Companion](https://github.com/tacheometry/testez-companion) recommended)
+1. Update & run relevant unit tests ([TestEZ Companion](https://github.com/tacheometry/testez-companion) recommended. use `test.project.json` to serve tests)
 2. Update relevant documentation (we use [Moonwave](https://github.com/evaera/moonwave))
 2. Change the versions in `wally.toml`
 3. update `CHANGELOG.md` with brief description of changes

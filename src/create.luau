@@ -40,6 +40,20 @@ local function create(): Types.Signal
 	end
 
 	--[=[
+		Disconnects the callback after it is invoked once. This is a useful
+		shorthand if you only need a callback to be fired once.
+	]=]
+	function Signal:once(callback)
+		local disconnect
+		disconnect = Signal:subscribe(function(...)
+			disconnect()
+			callback(...)
+		end)
+
+		return disconnect
+	end
+
+	--[=[
 		Invokes all currently subscribed callbacks. Note that, if a callback is
 		subscribed mid-fire, it will not be invoked during that firing.
 		Callbacks are invoked using

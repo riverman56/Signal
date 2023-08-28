@@ -159,5 +159,23 @@ return function()
 
 			expect(callCount).to.equal(2)
 		end)
+
+		it("should disconnect a subscriber after firing once if using the :once() shorthand", function()
+			local signal = Signal.create()
+
+			local callCount = 0
+
+			signal:once(function()
+				callCount += 1
+			end)
+
+			signal:fire()
+
+			expect(callCount).to.equal(1)
+
+			signal:fire()
+
+			expect(callCount).to.equal(1)
+		end)
 	end)
 end

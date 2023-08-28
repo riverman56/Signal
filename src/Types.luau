@@ -12,6 +12,7 @@ export type Signal = {
 
 	fire: (...any) -> (),
 	subscribe: (Callback) -> Disconnector,
+	once: (Callback) -> Disconnector,
 }
 
 export type SignalInterface = {

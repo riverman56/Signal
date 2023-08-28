@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v2.3.1">
 <title data-rh="true">Signal | Signal</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://riverman56.github.io/signal/api/Signal"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Signal | Signal"><meta data-rh="true" name="description" content="A simple publish/subscribe architecture implementation"><meta data-rh="true" property="og:description" content="A simple publish/subscribe architecture implementation"><link data-rh="true" rel="icon" href="/signal/favicon.png"><link data-rh="true" rel="canonical" href="https://riverman56.github.io/signal/api/Signal"><link data-rh="true" rel="alternate" href="https://riverman56.github.io/signal/api/Signal" hreflang="en"><link data-rh="true" rel="alternate" href="https://riverman56.github.io/signal/api/Signal" hreflang="x-default"><link rel="stylesheet" href="/signal/assets/css/styles.19a5646f.css">
-<link rel="preload" href="/signal/assets/js/runtime~main.5d6ae8a2.js" as="script">
-<link rel="preload" href="/signal/assets/js/main.55173f9a.js" as="script">
+<link rel="preload" href="/signal/assets/js/runtime~main.fd4aab5a.js" as="script">
+<link rel="preload" href="/signal/assets/js/main.9885cb8d.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -17,7 +17,16 @@
 <p>A function that disconnects the callback</p>
 </span></span></div><div>
 <p>Registers a callback to be invoked when the signal is fired.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="fire"><code style="text-decoration:none">fire</code><a href="#fire" class="hash-link" aria-label="Direct link to fire" title="Direct link to fire">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/riverman56/signal/blob/master/src/create.luau#L49"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Signal<!-- -->:</code><code class="green_DgR4">fire</code><code>(</code><code>...<!-- -->: </code><code class="blue_P4bS">any</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="once"><code style="text-decoration:none">once</code><a href="#once" class="hash-link" aria-label="Direct link to once" title="Direct link to once">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/riverman56/signal/blob/master/src/create.luau#L50"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Signal<!-- -->:</code><code class="green_DgR4">once</code><code>(</code><div class="inset_uKQm"><div><code>callback<!-- -->: </code><code class="purple_ieR2">(</code><code class="blue_P4bS">...any</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>The callback to be invoked</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>A function that disconnects the callback</p>
+</span></span></div><div>
+<p>
+  Disconnects the callback after it is invoked once. This is a useful
+  shorthand if you only need a callback to be fired once.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="fire"><code style="text-decoration:none">fire</code><a href="#fire" class="hash-link" aria-label="Direct link to fire" title="Direct link to fire">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/riverman56/signal/blob/master/src/create.luau#L67"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Signal<!-- -->:</code><code class="green_DgR4">fire</code><code>(</code><code>...<!-- -->: </code><code class="blue_P4bS">any</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>
   Invokes all currently subscribed callbacks. Note that, if a callback is
   subscribed mid-fire, it will not be invoked during that firing.
@@ -50,6 +59,28 @@
             }
         },
         {
+            &quot;name&quot;: &quot;once&quot;,
+            &quot;desc&quot;: &quot;Disconnects the callback after it is invoked once. This is a useful\nshorthand if you only need a callback to be fired once.\n\n\n\t&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;The callback to be invoked&quot;,
+                    &quot;lua_type&quot;: &quot;(...any) -&gt; ()&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A function that disconnects the callback&quot;,
+                    &quot;lua_type&quot;: &quot;() -&gt; ()&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 50,
+                &quot;path&quot;: &quot;src/create.luau&quot;
+            }
+        },
+        {
             &quot;name&quot;: &quot;fire&quot;,
             &quot;desc&quot;: &quot;Invokes all currently subscribed callbacks. Note that, if a callback is\nsubscribed mid-fire, it will not be invoked during that firing.\nCallbacks are invoked using\n[`task.spawn`](https://create.roblox.com/docs/reference/engine/libraries/task#spawn),\nso it&#x27;s okay to yield inside a callback.\n\t&quot;,
             &quot;params&quot;: [
@@ -62,7 +93,7 @@
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 49,
+                &quot;line&quot;: 67,
                 &quot;path&quot;: &quot;src/create.luau&quot;
             }
         }
@@ -86,8 +117,8 @@
         &quot;line&quot;: 7,
         &quot;path&quot;: &quot;src/create.luau&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#fire" class="table-of-contents__link toc-highlight">:fire</a></li><li><a href="#subscribe" class="table-of-contents__link toc-highlight">:subscribe</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 riverman56. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/signal/assets/js/runtime~main.5d6ae8a2.js"></script>
-<script src="/signal/assets/js/main.55173f9a.js"></script>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#fire" class="table-of-contents__link toc-highlight">:fire</a></li><li><a href="#once" class="table-of-contents__link toc-highlight">:once</a></li><li><a href="#subscribe" class="table-of-contents__link toc-highlight">:subscribe</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 riverman56. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+<script src="/signal/assets/js/runtime~main.fd4aab5a.js"></script>
+<script src="/signal/assets/js/main.9885cb8d.js"></script>
 </body>
 </html>

@@ -42,6 +42,10 @@ local function create(): Types.Signal
 	--[=[
 		Disconnects the callback after it is invoked once. This is a useful
 		shorthand if you only need a callback to be fired once.
+
+		@param callback (...any) -> () -- The callback to be invoked
+
+		@return () -> () -- A function that disconnects the callback
 	]=]
 	function Signal:once(callback)
 		local disconnect
